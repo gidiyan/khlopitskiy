@@ -1,4 +1,4 @@
-<div class="sliderAx h-auto">
+<div class="sliderAx h-auto bg-color3">
     <div id="slider-1" class="container mx-auto">
         <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://scontent.fiev6-1.fna.fbcdn.net/v/t1.0-9/84811542_2811349078933525_3536075853588856832_o.jpg?_nc_cat=110&ccb=2&_nc_sid=730e14&_nc_ohc=tX7BCbluh8QAX_1qj-z&_nc_ht=scontent.fiev6-1.fna&oh=dcc538d1bc9bc3822cb7c927a3548c39&oe=60220D97)">
             <div class="md:w-1/2">
@@ -23,8 +23,10 @@
         <br>
     </div>
 </div>
+<div class="bg-color3">
 <div  class="flex justify-between w-12 mx-auto pb-2">
-    <button id="sButton1" onclick="sliderButton1()" class="bg-color3 rounded-full w-4 pb-2 " ></button>
-    <button id="sButton2" onclick="sliderButton2() " class="bg-color3 rounded-full w-4 p-2"></button>
+    <button id="sButton1" onclick="sliderButton1()" class="bg-color1 rounded-full w-4 pb-2 " ></button>
+    <button id="sButton2" onclick="sliderButton2() " class="bg-color1 rounded-full w-4 p-2"></button>
+</div>
 </div>
 
