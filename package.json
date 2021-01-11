@@ -26,7 +26,6 @@
         "sass-loader": "^8.0.0",
         "tailwindcss": "^1.8.0",
         "vue-template-compiler": "^2.6.12",
-        "node": "^12.x"
+        "node": "^15.4.0"
     }
 }
-
