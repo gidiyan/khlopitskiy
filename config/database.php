@@ -67,9 +67,9 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => $DATABASE_URL["host"],
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
+//            'url' => $DATABASE_URL["host"],
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
             'database' => ltrim($DATABASE_URL["path"],"/"),
             'username' => $DATABASE_URL["user"],
             'password' => $DATABASE_URL["pass"],
