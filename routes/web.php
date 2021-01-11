@@ -23,5 +23,3 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 Route::get('/', 'App\Http\Controllers\ProductsController@index')->name('main.page');
 Route::get('/by_brand/{id}', [App\Http\Controllers\ProductsController::class, 'getByBrand'])->name('product.by.brand');
 Route::get('/product/{id}', [App\Http\Controllers\ProductsController::class, 'show'])->name('site.product');
-
-
