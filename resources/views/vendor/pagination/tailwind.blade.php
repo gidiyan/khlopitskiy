@@ -25,9 +25,9 @@
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
                 <p class="text-sm text-gray-700 leading-5">
-                    {!! __('Показано от') !!}
+                    {!! __('Показано') !!}
                     <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                    {!! __('до') !!}
+                    {!! __('-') !!}
                     <span class="font-medium">{{ $paginator->lastItem() }}</span>
                     {!! __('из') !!}
                     <span class="font-medium">{{ $paginator->total() }}</span>
