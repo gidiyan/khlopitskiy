@@ -10,7 +10,7 @@
         "production": "mix --production",
         "postinstall": "npm run prod",
         "heroku-prebuild": "npm install -f",
-        "heroku-postbuild": "npm run build"
+        "heroku-postbuild": "npm run production"
     },
     "devDependencies": {
         "@tailwindcss/ui": "^0.6.0",
