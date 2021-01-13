@@ -23,37 +23,9 @@ function loopSlider(){
         }},6000);
 }
 
-var cont1=0;
-function loopSlider1(){
-    var xx1= setInterval(function(){
-        switch(cont1)
-        {
-            case 0:{
-                $("#slider-3").fadeOut(400);
-                $("#slider-4").delay(400).fadeIn(400);
-                $("#sButton3").removeClass("bg-color4");
-                $("#sButton4").addClass("bg-color4");
-                cont1=1;
-                break;
-            }
-            case 1:
-            {
-                $("#slider-4").fadeOut(400);
-                $("#slider-3").delay(400).fadeIn(400);
-                $("#sButton4").removeClass("bg-color4");
-                $("#sButton3").addClass("bg-color4");
-                cont1=0;
-                break;
-            }
-        }},6000);
-
-}
-
 function reinitLoop(time){
     clearInterval(xx);
-    clearInterval(xx1);
     setTimeout(loopSlider(),time);
-    setTimeout(loopSlider1(),time);
 }
 
 function sliderButton1(){
@@ -74,29 +46,8 @@ function sliderButton2(){
     cont=1
 }
 
-function sliderButton3(){
-    $("#slider-4").fadeOut(400);
-    $("#slider-3").delay(400).fadeIn(400);
-    $("#sButton4").removeClass("bg-color4");
-    $("#sButton3").addClass("bg-color4");
-    reinitLoop(3000);
-    cont1=0
-}
-
-function sliderButton4(){
-    $("#slider-3").fadeOut(400);
-    $("#slider-4").delay(400).fadeIn(400);
-    $("#sButton3").removeClass("bg-color4");
-    $("#sButton4").addClass("bg-color4");
-    reinitLoop(3000);
-    cont1=1
-}
-
 $(window).ready(function(){
     $("#slider-2").hide();
     $("#sButton1").addClass("bg-color4");
-    $("#slider-4").hide();
-    $("#sButton3").addClass("bg-color4");
     loopSlider();
-    loopSlider1();
 });
