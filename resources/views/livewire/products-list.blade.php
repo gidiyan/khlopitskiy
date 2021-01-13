@@ -12,7 +12,6 @@
         </div>
         <div class="w-1/6 mx-1 relative">
             <select wire:model="sortAsc" id="grid-state">
-                <option value="1">Ascending</option>
                 <option value="1">Возрастание</option>
                 <option value="0">Спадание</option>
             </select>

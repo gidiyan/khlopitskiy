@@ -11,7 +11,8 @@
                                 <p class="text-2xl uppercase text-gray-900 font-bold">{{ $product->name }}</p>
                             </div>
                             <div class="prod-img">
-                                <img src="{{$product->pictures[0]->filename ?? ''}}"
+{{--                                <img src="{{$product->pictures[0]->filename ?? ''}}"--}}
+                                <img src="{{$product->image}}"
                                      class="w-full object-cover object-center">
                             </div>
                             <div class="prod-info grid gap-10">

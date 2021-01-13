@@ -27,9 +27,7 @@ class Product extends Model
     {
         return empty($search) ? static::query() : static::where('id', 'like', '%' . $search . '%')
             ->orWhere('name', 'like', '%' . $search . '%')
-            ->orWhere('details', 'like', '%' . $search . '%')
-            ->orWhere('brand_id', 'like', '%' . $search . '%')
-            ->orWhere('description', 'like', '%' . $search . '%');
+            ->orWhere('details', 'like', '%' . $search . '%');
     }
 
     public function pictures()
