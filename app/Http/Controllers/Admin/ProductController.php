@@ -63,7 +63,7 @@ class ProductController extends Controller
     public function uploadImage(UploadedFile $file): string
     {
         $filename = md5($file->getClientOriginalName() . time()) . uniqid('', true);
-        $file->storeAs('app/public/products', $filename);
+        $file->storeAs('public/products', $filename);
         return asset('storage/products/' . $filename);
     }
 
