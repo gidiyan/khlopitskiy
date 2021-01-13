@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \DB::statement("TRUNCATE TABLE products");
+        //\DB::statement("TRUNCATE TABLE products");
 //         \App\Models\User::factory(10)->create();
-//        \App\Models\Brand::factory(10)->create();
-//        \App\Models\Product::factory(10)->create();
-//        \App\Models\Category::factory(10)->create();
+        \App\Models\Brand::factory(10)->create();
+        \App\Models\Product::factory(10)->create();
+        \App\Models\Category::factory(10)->create();
         \App\Models\Type::factory(10)->create();
         \App\Models\Job::factory(50)->create();
     }
