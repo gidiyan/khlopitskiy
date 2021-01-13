@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Brand;
-use App\Models\Category;
-use App\Models\Picture;
-use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
+use App\Models\{Product, Brand, Category, Picture};
+
 
 class ProductController extends Controller
 {
@@ -26,7 +23,7 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -43,7 +40,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
         $status = $request->status ? 1 : 0;
         $product = Product::create(['name' => $request->name, 'details' => $request->details, 'description' => $request->description, 'status' => $status, 'brand_id' => $request->brand_id]);
         if ($request->images) {
@@ -102,25 +98,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
-
-        if ($request->images) {
-            $ids = $request->images;
-            foreach ($ids as $id) {
-                $picture = Picture::where('id', $id)->first();
-                $filename = parse_url($picture->filename, PHP_URL_PATH);
-                Storage::delete("public/products/" . $filename);
-                $product->pictures()->detach($id);
-                $picture->delete();
-            }
-            foreach ($request->images as $file) {
-                $filename = $this->uploadImage($file);
-                $picture = Picture::create([
-                    'filename' => $filename,
-                ]);
-                $product->pictures()->attach($picture->id);
-            }
-        }
+        $status = $request->status ? 1 : 0;
+        $product->update(['name' => $request->name, 'details' => $request->details, 'description' => $request->description, 'status' => $status, 'brand_id' => $request->brand_id]);
+//        if ($request->images) {
+//            $ids = $request->images;
+//            foreach ($ids as $id) {
+//                $picture = Picture::where('id', $id)->first();
+//                $filename = parse_url($picture->filename, PHP_URL_PATH);
+//                Storage::delete("public/products/" . $filename);
+//                $product->pictures()->detach($id);
+//                $picture->delete();
+//            }
+//            foreach ($request->images as $file) {
+//                $filename = $this->uploadImage($file);
+//                $picture = Picture::create([
+//                    'filename' => $filename,
+//                ]);
+//                $product->pictures()->attach($picture->id);
+//            }
+//        }
         $product->categories()->sync($request->categories);
         return redirect()->route('admin.products.index')->withMessage('Product updated successfully');
     }
@@ -137,10 +133,17 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index');
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function trashed()
     {
         $products = Product::onlyTrashed()->get();
-        return view('admin.products.trashed', compact('products'));
+        return view('admin.products.trashed',
+            compact('products')
+        );
     }
 
     public function restore($id)
@@ -154,5 +157,10 @@ class ProductController extends Controller
         $product = Product::withTrashed()->where('id', $id)->first();
         $product->forceDelete();
         return redirect()->route('admin.products.index');
+    }
+
+    public function test()
+    {
+        return view('admin.products.index');
     }
 }
