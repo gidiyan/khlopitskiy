@@ -15,7 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::whereStatus(1)->with('brand')->with('categories')->with('pictures')->paginate(9);
+        $products = Product::with('brand')->with('categories')->with('pictures')->paginate(9);
         return view('projects.products',compact('products'));
     }
 
