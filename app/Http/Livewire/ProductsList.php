@@ -10,7 +10,7 @@ class ProductsList extends Component
 {
     use WithPagination;
 
-    public $search = '';
+    public $search;
     public $perPage = 10;
     public $sortField = 'id';
     public $sortAsc = true;

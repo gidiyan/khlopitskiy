@@ -1,23 +1,25 @@
 <div>
     <div class="w-full flex pb-10">
         <div class="w-3/6 mx-1">
-            <input placeholder="Поиск проекта" wire:model.debounce.300ms="search">
+            <input type="text" placeholder="Поиск проекта" wire:model="search" >
         </div>
         <div class="w-1/6 mx-1  relative">
-            <select wire:model="sortField">
+            <select wire:model="sortField" id="grid-state">
                 <option value="name">Название</option>
                 <option value="details">Детальнее</option>
                 <option value="created_at">Дата создания</option>
             </select>
         </div>
         <div class="w-1/6 mx-1 relative">
-            <select wire:model="sortAsc">
+            <select wire:model="sortAsc" id="grid-state">
+                <option value="1">Ascending</option>
                 <option value="1">Возрастание</option>
                 <option value="0">Спадание</option>
             </select>
         </div>
     </div>
     @if ($products->isNotEmpty())
+        {{ $products ->links() }}
         <table class="border border-black shadow-2xl">
             <thead class="border border-black">
             <tr>

@@ -1,8 +1,9 @@
 @extends('layouts.master')
 @section('styles')
     @include('layouts.partials.admin._styles')
+    @livewireStyles
 @endsection
-<script src="{{ mix('js/app.js') }}" defer></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 @section('body')
     <div class="flex h-screen bg-gray-200">
@@ -15,6 +16,7 @@
                                   stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
+                {{ $header }}
             </header>
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <div class="mx-auto px-6 py-8">
@@ -43,3 +45,4 @@
 @push('scripts')
     @include('layouts.partials.admin._scripts')
 @endpush
+@livewireScripts

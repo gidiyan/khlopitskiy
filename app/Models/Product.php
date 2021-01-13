@@ -25,11 +25,11 @@ class Product extends Model
 
     public static function search($search)
     {
-        return empty($search) ? static::query()
-            : static::where('id', 'like', '%'.$search.'%')
-                ->orWhere('name', 'like', '%'.$search.'%')
-                ->orWhere('details', 'like', '%'.$search.'%')
-                ->orWhere('description', 'like', '%'.$search.'%');
+        return empty($search) ? static::query() : static::where('id', 'like', '%' . $search . '%')
+            ->orWhere('name', 'like', '%' . $search . '%')
+            ->orWhere('details', 'like', '%' . $search . '%')
+            ->orWhere('brand_id', 'like', '%' . $search . '%')
+            ->orWhere('description', 'like', '%' . $search . '%');
     }
 
     public function pictures()
