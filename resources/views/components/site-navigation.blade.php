@@ -1,4 +1,4 @@
-<div class="z-50 shadow-sm sticky top-0 bg-gradient-to-b lg:from-color1 lg:to-color3 hover:from-color5 hover:to-color3">
+<div class="z-50 shadow-sm sticky top-0 bg-gradient-to-b from-color1 to-color3  hover:from-color5 hover:to-color3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-4">
         <div class="flex items-center justify-between md:justify-start">
             <!-- Menu Trigger -->

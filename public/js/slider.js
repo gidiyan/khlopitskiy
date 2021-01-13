@@ -46,6 +46,7 @@ function sliderButton2(){
     cont=1
 }
 
+
 $(window).ready(function(){
     $("#slider-2").hide();
     $("#sButton1").addClass("bg-color4");

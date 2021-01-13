@@ -1,4 +1,4 @@
-<footer class="text-gray-700 body-font bg-gradient-to-t lg:from-color1 lg:to-color3 hover:from-color5 hover:to-color3">
+<footer class="text-gray-700 body-font bg-gradient-to-t from-color1 to-color3  hover:from-color5 hover:to-color3">
     <div class="container px-5 py-10 mx-auto">
         <div class="flex flex-wrap md:text-left text-center order-first">
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
