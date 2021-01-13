@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,15 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $ldate = date('Y-m-d H:i:s');
-        $products = Product::paginate(9);
-        return view('site.index',compact('products','ldate'));
+        $products = Product::whereStatus(1)->with('brand')->with('categories')->with('pictures')->paginate(9);
+        return view('projects.products',compact('products'));
+    }
+
+/* @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+*/
+    public function main()
+    {
+        return view('projects.index');
     }
 
     /**
@@ -44,12 +51,12 @@ class ProductsController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($id)
     {
-        $product = Product::whereId($id)->with('brand')->firstOrFail();
-        return view('site.product', compact('product'));
+        $product = Product::whereId($id)->with('brand')->with('categories')->with('pictures')->firstOrFail();
+        return view('projects.product', compact('product'));
     }
 
     /**
@@ -89,6 +96,17 @@ class ProductsController extends Controller
     public function getByBrand($id)
     {
         $products = Product::where([['brand_id', $id]])->with('brand')->paginate(9);
-        return view('site.index', compact('products'));
+        return view('projects.products', compact('products'));
+    }
+
+    public function getByCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        $products = $category->products()->wherePivot('category_id', $id)
+            ->with('brand')
+            ->with('categories')
+            ->paginate(12);
+
+        return view('projects.products', compact('products'));
     }
 }

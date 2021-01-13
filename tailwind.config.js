@@ -1,17 +1,25 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-    future: {
-        removeDeprecatedGapUtilities: true,
-        purgeLayersByDefault: true,
-    },
     purge: [
+        './vendor/laravel/jetstream/**/*.blade.php',
+        './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './resources/js/components/**/*.vue'
     ],
+
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
-    variants: {},
-    plugins: [
-        require('@tailwindcss/custom-forms')
-    ],
-}
+
+    variants: {
+        extend: {
+            opacity: ['disabled'],
+        },
+    },
+
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+};

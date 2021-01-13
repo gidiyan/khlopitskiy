@@ -11,7 +11,7 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'details', 'description', 'image', 'status'];
+    protected $fillable = ['name', 'details', 'description', 'image', 'status', 'brand_id'];
 
         public function brand()
     {
@@ -30,5 +30,10 @@ class Product extends Model
                 ->orWhere('name', 'like', '%'.$search.'%')
                 ->orWhere('details', 'like', '%'.$search.'%')
                 ->orWhere('description', 'like', '%'.$search.'%');
+    }
+
+    public function pictures()
+    {
+        return $this->belongsToMany(Picture::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Product;
 use Illuminate\View\Component;
 
 class SiteSlider extends Component
@@ -23,6 +24,7 @@ class SiteSlider extends Component
      */
     public function render()
     {
-        return view('components.site-slider');
+        $products = Product::all();
+        return view('components.site-slider',compact('products'));
     }
 }
