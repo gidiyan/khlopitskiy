@@ -9,7 +9,6 @@
         <x-admin.sidebar></x-admin.sidebar>
         <div class="flex-1 flex flex-col overflow-hidden">
             <header class="main-header">
-                    {{ $header }}
                     <button id="sidebar-enable" class="sidebar-enable">
                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2"
