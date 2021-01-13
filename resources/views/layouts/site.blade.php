@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/lightbox.css') }}" rel="stylesheet">
-    <link href="https://khlopitskiy.herokuapp.com/lightbox.css" rel="stylesheet">
+    <link href="https://khlopitskiy.herokuapp.com/css/lightbox.css" rel="stylesheet">
     <link href="https://khlopitskiy.herokuapp.com/css/app.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
