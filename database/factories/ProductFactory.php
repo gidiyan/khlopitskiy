@@ -26,7 +26,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->unique()->word(),
             'details' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
-            'image' => $this->faker->imageUrl($width = 250, $height = 150, 'cats'),
+            'image' => $this->faker->imageUrl($width = 640, $height = 480, 'cats'),
             'brand_id' => $this->faker->randomElement($brands),
             'created_at' => now(),
             'updated_at' => now(),
