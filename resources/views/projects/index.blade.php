@@ -24,15 +24,19 @@
                         <div class="my-12">
                             <div class="gallery flex-grow relative mx-auto" x-data="gallery()" x-init="init({index:20})">
                                 @foreach($products as $product)
+
                                 <div class="gallery__item gallery__item--hidden sm:rounded-lg overflow-hidden" x-ref="height">
+                                    <a href="{{ route('products')}}">
                                     <img
                                         src="{{ $product->image }}"
                                         alt=""
                                         class="gallery__image object-cover object-center"
                                         title="Image Title"
                                     />
+                                    </a>
                                 </div>
                                 @endforeach
+
                                 <a
                                     class="gallery__nav gallery__nav--right text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
                                     x-on:click="next()"
