@@ -6,8 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Khlopitskiy') }}</title>
-    <link rel="shortcut icon" href="{{'favicon.ico'}}" type="image/x-icon">
-    <link rel="https://khlopitskiy.herokuapp.com/favicon.ico" type="image/x-icon">
+{{--    <link rel="shortcut icon" href="{{'favicon.ico'}}" type="image/x-icon">--}}
+    <link rel="shortcut icon" href=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJLRuhsPVyEhTKBnWtz_K0dJi3dOQr72RQAQ&usqp=CAU" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
