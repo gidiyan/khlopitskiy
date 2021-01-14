@@ -7,31 +7,31 @@
     <nav class="mt-4">
         <a class="nav-link{{ request()->is('admin') ? ' active' : '' }}" href="{{ route("admin.home") }}">
             <i class="fas fa-house-user"></i>
-            <span class="mx-4">Стартовая</span>
+            <span class="mx-4 text-white">Стартовая</span>
         </a>
         <a class="nav-link{{ request()->is('admin/products*') ? ' active' : '' }}" href="{{ route('admin.products.index') }}">
-            <i class="fas fa-object-ungroup"></i>
-            <span class="mx-4">Проекты</span>
+            <i class="fas fa-object-ungroup text-white"></i>
+            <span class="mx-4 text-white">Проекты</span>
         </a>
         <a class="nav-link{{ request()->is('admin/products*') ? ' active' : '' }}" href="{{ route('admin.products.index') }}">
-            <i class="far fa-building"></i>
-            <span class="mx-4">ЖК</span>
+            <i class="far fa-building text-white"></i>
+            <span class="mx-4 text-white">ЖК</span>
         </a>
         <a class="nav-link{{ request()->is('admin/products*') ? ' active' : '' }}" href="{{ route('admin.products.index') }}">
-            <i class="far fa-object-group"></i>
-            <span class="mx-4">Категории проектов</span>
+            <i class="far fa-object-group text-white"></i>
+            <span class="mx-4 text-white">Категории проектов</span>
         </a>
         <a class="nav-link{{ request()->is('admin/products*') ? ' active' : '' }}" href="{{ route('admin.products.index') }}">
-            <i class="fab fa-creative-commons-nd"></i>
-            <span class="mx-4">Типы работ</span>
+            <i class="fab fa-creative-commons-nd text-white"></i>
+            <span class="mx-4 text-white">Типы работ</span>
         </a>
         <a class="nav-link{{ request()->is('admin/products*') ? ' active' : '' }}" href="{{ route('admin.products.index') }}">
-            <i class="fas fa-paint-roller"></i>
-            <span class="mx-4">Работы</span>
+            <i class="fas fa-paint-roller text-white"></i>
+            <span class="mx-4 text-white">Работы</span>
         </a>
         <a class="nav-link{{ request()->is('admin/products*') ? ' active' : '' }}" href="{{ route('admin.products.index') }}">
-            <i class="fas fa-users"></i>
-            <span class="mx-4">Пользователи</span>
+            <i class="fas fa-users text-white"></i>
+            <span class="mx-4 text-white">Пользователи</span>
         </a>
     </nav>
 </div>
