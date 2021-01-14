@@ -1,60 +1,46 @@
 <footer class="text-gray-700 body-font bg-gradient-to-t from-color1 to-color3  hover:from-color5 hover:to-color3">
     <div class="container px-5 py-10 mx-auto">
-        <div class="flex flex-wrap md:text-left text-center order-first">
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Khlopitskiy</h2>
-                <nav class="list-none mb-10">
+        <div class="flex flex-wrap md:text-left text-center order-first justify-center">
+            <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase text-center">Khlopitskiy</h2>
+                <nav class="list-none mb-10 text-center">
+                    <span class="font-bold italic">He is funny and awesome man and bla bla bla bla</span>
+                </nav>
+            </div>
+            <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase  text-center">Контакты</h2>
+                <nav class="list-none mb-10 text-center">
                     <li>
-                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                        <a class="text-gray-600 hover:text-gray-800">Ирпень,ул.Ломоносова,72</a>
                     </li>
                     <li>
-                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                    +38 063 140 92 32
                     </li>
                     <li>
-                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                        <a href="https://www.google.com.ua/maps/place/50.53807346467963, 30.270125726010313" target="_blank" class="text-blue-500 hover:text-gray-800">Показать на карте</a>
                     </li>
                 </nav>
             </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Контакты</h2>
-                <nav class="list-none mb-10">
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                    </li>
-                </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Адрес</h2>
-                <nav class="list-none mb-10">
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                    </li>
-                </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Социальные сети</h2>
-                <nav class="list-none mb-10">
+{{--            <div class="lg:w-1/4 md:w-1/2 w-full px-4">--}}
+{{--                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">Адрес</h2>--}}
+{{--                <nav class="list-none mb-10">--}}
+{{--                    <li>--}}
+{{--                        <a class="text-gray-600 hover:text-gray-800">First Link</a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>--}}
+{{--                    </li>--}}
+{{--                </nav>--}}
+{{--            </div>--}}
+            <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase text-center">Социальные сети</h2>
+                <nav class="list-none mb-10 text-center">
                     <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
         <a class="text-gray-500">
           <a href="https://www.facebook.com/resident.er" rel="noopener noreferrer" class="text-gray-600 ml-1"

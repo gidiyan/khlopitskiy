@@ -45,11 +45,14 @@ class PriceListController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $jobs = Job::where([['type_id', $id]])->get();
+        $types = Type::where([['id',$id]])->get();
+//        dd($jobs);
+        return view('pricelist.index', compact('jobs','types'));
     }
 
     /**

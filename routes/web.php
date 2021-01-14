@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 Route::get('/', 'App\Http\Controllers\ProductsController@main')->name('main');
 
 Route::get('/pricelist', 'App\Http\Controllers\PriceListController@index')->name('pricelist');
+Route::get('/pricelist/{id}', 'App\Http\Controllers\PriceListController@show')->name('pricelist.by.type');
 
 Route::get('/projects', 'App\Http\Controllers\ProductsController@index')->name('products');
 Route::get('/by_brand/{id}', [App\Http\Controllers\ProductsController::class, 'getByBrand'])->name('product.by.brand');

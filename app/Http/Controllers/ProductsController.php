@@ -23,7 +23,8 @@ class ProductsController extends Controller
 */
     public function main()
     {
-        return view('projects.index');
+        $products = Product::with('brand')->with('categories')->with('pictures')->paginate(9);
+        return view('projects.index',compact('products'));
     }
 
     /**
