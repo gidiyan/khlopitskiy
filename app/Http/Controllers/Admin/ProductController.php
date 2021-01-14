@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use App\Models\{Product, Brand, Category, Picture};
+use Illuminate\Support\Facades\Storage;
 
 
 class ProductController extends Controller
@@ -42,6 +43,7 @@ class ProductController extends Controller
     {
         $status = $request->status ? 1 : 0;
         $product = Product::create(['name' => $request->name, 'details' => $request->details, 'description' => $request->description, 'status' => $status, 'brand_id' => $request->brand_id]);
+        dd($request);
         if ($request->images) {
             foreach ($request->images as $file) {
                 $filename = $this->uploadImage($file);
@@ -73,20 +75,22 @@ class ProductController extends Controller
     {
         $brands = Brand::all();
         $categories = Category::all();
-        return view('admin.products.show', compact('product','brands','categories'));
+        $product_categories = $product->categories()->get();
+        return view('admin.products.show', compact('product','brands','categories','product_categories'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param Product $product
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Product $product)
     {
         $brands = Brand::all();
         $categories = Category::all();
-        return view('admin.products.edit', compact('product', 'brands', 'categories'));
+        $product_categories = $product->categories()->get();
+        return view('admin.products.edit', compact('product', 'brands', 'categories','product_categories'));
     }
 
     /**
@@ -100,23 +104,6 @@ class ProductController extends Controller
     {
         $status = $request->status ? 1 : 0;
         $product->update(['name' => $request->name, 'details' => $request->details, 'description' => $request->description, 'status' => $status, 'brand_id' => $request->brand_id]);
-//        if ($request->images) {
-//            $ids = $request->images;
-//            foreach ($ids as $id) {
-//                $picture = Picture::where('id', $id)->first();
-//                $filename = parse_url($picture->filename, PHP_URL_PATH);
-//                Storage::delete("public/products/" . $filename);
-//                $product->pictures()->detach($id);
-//                $picture->delete();
-//            }
-//            foreach ($request->images as $file) {
-//                $filename = $this->uploadImage($file);
-//                $picture = Picture::create([
-//                    'filename' => $filename,
-//                ]);
-//                $product->pictures()->attach($picture->id);
-//            }
-//        }
         $product->categories()->sync($request->categories);
         return redirect()->route('admin.products.index')->withMessage('Product updated successfully');
     }

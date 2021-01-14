@@ -24,6 +24,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" defer></script>
 {{--    <script src="https://khlopitskiy.herokuapp.com/js/app.js" defer></script>--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     <script src="{{ asset('js/lightbox.js') }}" defer></script>
     <script src="{{ asset('js/slider.js') }}" defer></script>
 {{--    <script src="https://khlopitskiy.herokuapp.com/js/lightbox.js" defer></script>--}}

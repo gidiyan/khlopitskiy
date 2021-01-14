@@ -1,7 +1,7 @@
 <x-admin.admin-layout>
     <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Product details') }}
+                {{ __('Проект') }}
             </h2>
             <a class="px-2 btn-md btn-blue hover:border-transparent float-right"
                href="{{route("admin.products.index")}}">Назад</a>
@@ -45,7 +45,7 @@
                                     </label>
                                     <input
                                         class="{{ $errors->has('description')?'is-invalid':'' }} appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        name="description" placeholder="Description" value="{{$product->description}}"
+                                        name="description" placeholder="" value="{{$product->description}}"
                                         disabled>
                                     <p class="text-gray-600 text-xs italic">Описание</p>
                                 </div>
@@ -76,7 +76,7 @@
                                         @foreach($categories as $category)
                                             <option value="{{$category->id}}"
                                                     {{ ($category->id === $product->category_id)? 'selected':'' }}
-                                                    class="border border-gray-700 rounded">{{$category->name}}</option>
+                                                    class="border border-gray-700 rounded" @foreach($product_categories as $p_category){{$p_category->id == $category->id?'selected':''}}@endforeach>{{$category->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

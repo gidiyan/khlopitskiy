@@ -13,7 +13,7 @@
         <div class="w-1/6 mx-1 relative">
             <select wire:model="sortAsc" id="grid-state">
                 <option value="1">Возрастание</option>
-                <option value="0">Спадание</option>
+                <option value="0">Убывание</option>
             </select>
         </div>
     </div>
@@ -22,6 +22,7 @@
         <table class="border border-black shadow-2xl">
             <thead class="border border-black">
             <tr>
+                <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">ID</th>
                 <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Название</th>
                 <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Детальнее</th>
                 <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Статус</th>
@@ -32,6 +33,7 @@
             <tbody>
             @forelse ($products as $product)
                 <tr>
+                    <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->id}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->name}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->details}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->status}}</td>
