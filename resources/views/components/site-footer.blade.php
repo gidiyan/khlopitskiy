@@ -11,13 +11,13 @@
                 <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase  text-center">Контакты</h2>
                 <nav class="list-none mb-10 text-center">
                     <li>
-                        <a class="text-gray-600 hover:text-gray-800">Ирпень,ул.Ломоносова,72</a>
+                        <a class="text-gray-600 hover:text-gray-800">Ирпень,ул.Ломоносова,19</a>
                     </li>
                     <li>
                     +38 063 140 92 32
                     </li>
                     <li>
-                        <a href="https://www.google.com.ua/maps/place/50.53807346467963, 30.270125726010313" target="_blank" class="text-blue-500 hover:text-gray-800">Показать на карте</a>
+                        <a href="https://www.google.com.ua/maps/place/50.52963441420576, 30.26462358370776" target="_blank" class="text-blue-500 hover:text-gray-800">Показать на карте</a>
                     </li>
                 </nav>
             </div>

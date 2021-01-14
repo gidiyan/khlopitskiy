@@ -26,16 +26,16 @@
                                     </a>
                                 </div>
                                 <div>
-                                                                    <ul class="list-reset flex flex-wrap">
-                                                                        @forelse($product->categories as $category)
-                                                                            <li class="mr-3">
-                                                                                <a class="inline-block border border-blue-500 border-opacity-100 rounded py-1 px-3 bg-blue text-red-400"
-                                                                                   href="{{ route('product.by.category', $category->id) }}">{{ $category->name }}</a>
-                                                                            </li>
-                                                                        @empty
-                                                                            No categories yet
-                                                                        @endforelse
-                                                                    </ul>
+                                    <ul class="list-reset flex flex-wrap">
+                                        @forelse($product->categories as $category)
+                                            <li class="mr-3">
+                                                <a class="inline-block border border-blue-500 border-opacity-100 rounded py-1 px-3 bg-blue text-red-400"
+                                                   href="{{ route('product.by.category', $category->id) }}">{{ $category->name }}</a>
+                                            </li>
+                                        @empty
+                                            No categories yet
+                                        @endforelse
+                                    </ul>
                                 </div>
                                 <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
                                     <p class="font-bold text-xl">{{ $product->description }}</p>
@@ -50,5 +50,6 @@
             {{ $products->links() }}
         </div>
     </div>
+<div></div>
     <x-site-footer></x-site-footer>
 </x-site-layout>
