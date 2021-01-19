@@ -1,7 +1,7 @@
 <div>
     <div class="w-full flex pb-10">
         <div class="w-3/6 mx-1">
-            <input type="text" placeholder="Поиск проекта" wire:model="search" >
+            <input type="text" placeholder="Поиск проекта" wire:model="search">
         </div>
         <div class="w-1/6 mx-1  relative">
             <select wire:model="sortField" id="grid-state">
@@ -36,7 +36,7 @@
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->id}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->name}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->details}}</td>
-                    <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->status}}</td>
+                    <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->status == 0 ? '' : 'Активный'}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->created_at}}</td>
                     <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">
                         <a href="{{route('admin.products.show',$product->id)}}"

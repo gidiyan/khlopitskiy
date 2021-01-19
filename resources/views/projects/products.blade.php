@@ -11,8 +11,8 @@
                                 <p class="text-2xl uppercase text-gray-900 font-bold">{{ $product->name }}</p>
                             </div>
                             <div class="prod-img">
-{{--                                <img src="{{$product->pictures[0]->filename ?? ''}}"--}}
-                                <img src="{{$product->image}}"
+                                <img src="data:image/png;base64, {{$product->pictures[0]->filename ?? ''}}"
+                                     {{--                                <img src="{{$product->image}}"--}}
                                      class="w-full object-cover object-center">
                             </div>
                             <div class="prod-info grid gap-10">
@@ -50,6 +50,6 @@
             {{ $products->links() }}
         </div>
     </div>
-<div></div>
+    <div></div>
     <x-site-footer></x-site-footer>
 </x-site-layout>

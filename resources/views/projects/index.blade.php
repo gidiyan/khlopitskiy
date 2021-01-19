@@ -34,12 +34,12 @@
                                          x-ref="height">
                                         <a href="{{ route('products')}}">
                                             <img
-                                                src="{{ $product->image }}"
+                                                src="data:image/gif;base64, {{ $product->pictures[0]->filename  }}"
                                                 alt=""
                                                 class="gallery__image object-cover object-center"
                                                 title="Image Title"
                                             />
-                                        </a>
+                                        </a>a
                                     </div>
                                 @endforeach
 

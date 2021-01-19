@@ -1,10 +1,10 @@
 <x-admin.admin-layout>
     <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Создать проект') }}
-            </h2>
-            <a class="px-2 btn-md btn-blue"
-               href="{{route("admin.products.index")}}">Назад</a>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Создать проект') }}
+        </h2>
+        <a class="px-2 btn-md btn-blue"
+           href="{{route("admin.products.index")}}">Назад</a>
     </x-slot>
     <div class="main-card">
         <div class="body">
@@ -15,7 +15,8 @@
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label for="name"
-                                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Название проекта</label>
+                                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Название
+                                проекта</label>
                             <input type="text"
                                    class="{{ $errors->has('name')?'is-invalid':'' }} appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                    placeholder="Название" id="name" name="name" value="{{old('name')}}" required>
@@ -25,7 +26,7 @@
                         @endif
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label for="details"
-                                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Детальнее</label>
+                                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Расширенное название</label>
                             <input type="text"
                                    class="{{ $errors->has('details')?'is-invalid':'' }} appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                    placeholder="Детальнее" id="details" name="details"
@@ -39,7 +40,7 @@
                         <div class="w-full px-3">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                    for="description">
-                                Описание
+                                Описание проекта
                             </label>
                             <textarea
                                 class="{{ $errors->has('description')?'is-invalid':'' }} appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -92,8 +93,10 @@
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 px-3 my-4">
-                        <input type="checkbox" class="form-checkbox border-black" name="status" id="status">
-                        <label class="appearance-none checked:bg-blue-600 checked:border-transparent" for="status">Показывать на сайте</label>
+                        <input type="hidden" name="status" value="0">
+                        <input type="checkbox" class="form-checkbox border-black" name="status" id="status" value="1">
+                        <label class="appearance-none checked:bg-blue-600 checked:border-transparent" for="status">Показывать
+                            на сайте</label>
                     </div>
                     <div class="flex justify-center w-full my-2">
                         <button type="submit"

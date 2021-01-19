@@ -16,10 +16,12 @@
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label for="name"
-                                       class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Название проекта</label>
+                                       class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Название
+                                    проекта</label>
                                 <input type="text"
                                        class="{{ $errors->has('name')?'is-invalid':'' }} appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                       placeholder="Название" id="name" name="name" value="{{ $product->name }}" required>
+                                       placeholder="Название" id="name" name="name" value="{{ $product->name }}"
+                                       required>
                             </div>
                             @if($errors->has('name'))
                                 <p class="invalid-feedback">{{ $errors->first('name') }}</p>
@@ -42,7 +44,7 @@
                                        for="description">
                                     Описание
                                 </label>
-                                <textarea
+                                <textarea name="description"
                                     class="{{ $errors->has('description')?'is-invalid':'' }} appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     id="grid-password" placeholder="Описание">{{$product->description}}</textarea>
                                 <p class="text-gray-600 text-xs italic">Описание проекта</p>
@@ -77,7 +79,9 @@
                             </div>
                         </div>
                         <div class="w-full md:w-1/2 px-3 my-4">
-                            <input type="checkbox" class="form-checkbox border-black" name="status" id="status" {{$product->status == 1?'checked':''}}>
+                            <input type="hidden" name="status" value="0">
+                            <input type="checkbox" class="form-checkbox border-black" name="status" id="status"
+                                   {{$product->status == 1?'checked':''}} value="1">
                             <label class="appearance-none checked:bg-blue-600 checked:border-transparent"
                                    for="status">Показывать на сайте</label>
                         </div>

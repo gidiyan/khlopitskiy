@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
 use App\Models\{Product, Brand, Category, Picture};
-use Illuminate\Support\Facades\Storage;
 
 
 class ProductController extends Controller
@@ -41,29 +39,31 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $status = $request->status ? 1 : 0;
-        $product = Product::create(['name' => $request->name, 'details' => $request->details, 'description' => $request->description, 'status' => $status, 'brand_id' => $request->brand_id]);
         dd($request);
+        $product = Product::create($request->all());
         if ($request->images) {
             foreach ($request->images as $file) {
-                $filename = $this->uploadImage($file);
+                $imagedata = file_get_contents($file);
+                $base64 = base64_encode($imagedata);
+//                $filename = $this->uploadImage($file);
                 $picture = Picture::create([
-                    'filename' => $filename,
+                    'filename' => $base64
+//                    'filename' => $filename
                 ]);
                 $product->pictures()->attach($picture->id);
             }
         }
         $category = Category::find($request->categories);
         $product->categories()->attach($category);
-        return redirect()->route('admin.products.index')->withMessage('Product created successfully');
+        return redirect()->route('admin.products.index')->withMessage('Проект успешно создан');
     }
 
-    public function uploadImage(UploadedFile $file): string
-    {
-        $filename = md5($file->getClientOriginalName() . time()) . uniqid('', true);
-        $file->storeAs('public/products', $filename);
-        return asset('storage/products/' . $filename);
-    }
+//    public function uploadImage(UploadedFile $file): string
+//    {
+//        $filename = md5($file->getClientOriginalName() . time()) . uniqid('', true);
+//        $file->storeAs('public/products', $filename);
+//        return asset('storage/products/' . $filename);
+//    }
 
     /**
      * Display the specified resource.
@@ -76,7 +76,7 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categories = Category::all();
         $product_categories = $product->categories()->get();
-        return view('admin.products.show', compact('product','brands','categories','product_categories'));
+        return view('admin.products.show', compact('product', 'brands', 'categories', 'product_categories'));
     }
 
     /**
@@ -90,7 +90,7 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categories = Category::all();
         $product_categories = $product->categories()->get();
-        return view('admin.products.edit', compact('product', 'brands', 'categories','product_categories'));
+        return view('admin.products.edit', compact('product', 'brands', 'categories', 'product_categories'));
     }
 
     /**
@@ -102,17 +102,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $status = $request->status ? 1 : 0;
-        $product->update(['name' => $request->name, 'details' => $request->details, 'description' => $request->description, 'status' => $status, 'brand_id' => $request->brand_id]);
+        $product->update($request->all());
         $product->categories()->sync($request->categories);
-        return redirect()->route('admin.products.index')->withMessage('Product updated successfully');
+        return redirect()->route('admin.products.index')->withMessage('Проект успешно обновлен');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param \App\Models\Product $product
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Product $product)
     {
@@ -136,18 +135,14 @@ class ProductController extends Controller
     public function restore($id)
     {
         Product::withTrashed()->where('id', $id)->restore();
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.trashed');
     }
 
     public function force($id)
     {
         $product = Product::withTrashed()->where('id', $id)->first();
         $product->forceDelete();
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.trashed');
     }
 
-    public function test()
-    {
-        return view('admin.products.index');
-    }
 }

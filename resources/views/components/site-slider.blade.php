@@ -1,12 +1,13 @@
 <div class="sliderAx h-auto bg-color3">
     <div id="slider-1" class="container mx-auto">
         <div class="bg-cover bg-center  h-96 text-white py-24 px-10 object-fill"
-{{--             style="background-image: url({{ $products[0]->pictures[0]->filename }})">--}}
-style="background-image: url({{ $products[0]->image }})">
+             {{--             style="background-image: url({{ $products[0]->pictures[0]->filename }})">--}}
+             style="background-image: url(data:image/gif;base64,{{ $products[0]->pictures[0]->filename }})">
             <div class="md:w-1/2">
                 <p class="font-bold text-sm uppercase text-2xl mb-10 leading-none">{{ $products[0]->name }}</p>
                 <a href="{{ route('projects.product', $products[0]->id) }}"
-                   class="bg-color4 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-100 hover:text-gray-800">К проекту</a>
+                   class="bg-color4 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-100 hover:text-gray-800">К
+                    проекту</a>
             </div>
         </div> <!-- container -->
         <br>
@@ -14,12 +15,13 @@ style="background-image: url({{ $products[0]->image }})">
 
     <div id="slider-2" class="container mx-auto">
         <div class="bg-cover bg-center  h-96 text-white py-24 px-10 object-fill"
-{{--             style="background-image: url({{ $products[1]->pictures[0]->filename }})">--}}
-style="background-image: url({{ $products[1]->image }})">
-        <div class="md:w-1/2">
+             {{--             style="background-image: url({{ $products[1]->pictures[0]->filename }})">--}}
+             style="background-image: url(data:image/gif;base64,{{ $products[1]->pictures[0]->filename }})">
+            <div class="md:w-1/2">
                 <p class="font-bold text-sm uppercase text-2xl mb-10 leading-none">{{ $products[1]->name }}</p>
                 <a href="{{ route('projects.product', $products[1]->id) }}"
-                   class="bg-color4 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-100 hover:text-gray-800">К проекту</a>
+                   class="bg-color4 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-100 hover:text-gray-800">К
+                    проекту</a>
             </div>
         </div> <!-- container -->
         <br>

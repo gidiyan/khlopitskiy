@@ -2,5 +2,5 @@
 
 return [
 
-    'currency_symbol' => env('CURRENCY_SYMBOL','₴')
+    'currency_symbol' => env('CURRENCY_SYMBOL', '₴')
 ];

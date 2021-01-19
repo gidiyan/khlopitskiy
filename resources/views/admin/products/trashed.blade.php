@@ -13,10 +13,10 @@
                     <thead class="border border-black">
                     <tr>
                         <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">ID</th>
-                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</th>
-                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Deleted At</th>
-                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Status</th>
-                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Actions</th>
+                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Название</th>
+                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Удален</th>
+                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Статус</th>
+                        <th class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Действия</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,24 +25,24 @@
                             <th class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->id}}</th>
                             <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->name}}</td>
                             <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->deleted_at}}</td>
-                            <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->status}}</td>
+                            <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">{{$product->status == 0 ? '' : 'Активный'}}</td>
                             <td class="uppercase tracking-wide text-gray-700 text-xs mb-2">
                                 <form action="{{route('admin.products.force', $product->id)}}" method="POST"
                                       style="display: inline-block">
                                     @csrf @method('delete')
                                     <input type="submit" class="px-2 btn-md btn-red"
-                                           value="Force Delete">
+                                           value="Удалить из базы">
                                 </form>
                                 <form action="{{route('admin.products.restore', $product->id)}}" method="POST"
                                       style="display: inline-block">
                                     @csrf
                                     <input type="submit" class="px-2 btn-md btn-green"
-                                           value="Restore Product">
+                                           value="Восстановить">
                                 </form>
                             </td>
                         </tr>
                     @empty
-                        <h2>No Products Yet</h2>
+                        <h2>Пока нет удаленных проектов</h2>
                     @endforelse
                     </tbody>
                 </table>

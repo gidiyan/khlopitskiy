@@ -25,6 +25,6 @@ class SiteSlider extends Component
     public function render()
     {
         $products = Product::all();
-        return view('components.site-slider',compact('products'));
+        return view('components.site-slider', compact('products'));
     }
 }

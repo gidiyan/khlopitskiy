@@ -26,7 +26,7 @@ class AddTypeToJobsTable extends Migration
     public function down()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->dropForeign('jobs_type_id_foreign');
+            $table->foreignId('type_id')->constrained()->onDelete('cascade');
         });
     }
 }

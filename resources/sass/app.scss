@@ -29,6 +29,7 @@ $cyan: #6cb2eb;
     &.success {
         @apply text-green-700 bg-green-300;
     }
+
     &.danger {
         @apply text-red-700 bg-red-300;
     }
@@ -48,6 +49,7 @@ $cyan: #6cb2eb;
     &:focus {
         @apply outline-none;
     }
+
     &:hover {
         @apply no-underline;
     }
@@ -59,6 +61,7 @@ $cyan: #6cb2eb;
     &:focus {
         @apply outline-none;
     }
+
     &:hover {
         @apply no-underline;
     }
@@ -124,6 +127,7 @@ a.disabled {
 main a {
     @apply text-blue-600;
 }
+
 main a:hover {
     @apply underline;
 }
@@ -303,6 +307,7 @@ header.main-header {
         }
     }
 }
+
 .color1 {
     color: $color1;
 }
@@ -352,11 +357,12 @@ header.main-header {
 //    filter: grayscale(0);
 //}
 
-.from-color1{
+.from-color1 {
     --tw-gradient-from: #3D5B81;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(61, 91, 129, 0));
 
 }
+
 .to-color3 {
     --tw-gradient-to: #DFFBFC;
 }
@@ -365,6 +371,7 @@ header.main-header {
     --tw-gradient-from: #3D5B81;
     --tw-gradient-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(41, 50, 65, 0));
 }
+
 .to-color3:hover {
     --tw-gradient-to: #DFFBFC;
 }
